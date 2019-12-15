@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Options</title>
+  <link rel="stylesheet" type="text/css" href="../styles/options.css">
+</head>
+<body>
+  <div class="ui container" id="option">
+
+    <div class="ui top attached tabular menu">
+      <div class="active item" data-target="images">Image</div>
+      <div class="item" data-target="settings">Settings</div>
+      <div class="item" data-target="import">Import</div>
+      <div class="item" data-target="export">Export</div>
+    </div>
+    
+    <div class="ui bottom attached active tab segment" id="images">
+      <div class="ui three item menu">
+        <div class="item active" id="back">Back</div>
+        <div class="item" data-page="0" id="page">1</div>
+        <div class="item active" id="next">Next</div>
+      </div>
+      <div class="ui tiny images" id="gyazo_items"></div>
+    </div>
+    
+    <div class="ui bottom attached tab segment" id="settings">
+      <h3 class="first">バージョン</h3>
+      <div>2.0</div>
+
+      <h3 class="first">1ページの表示件数</h3>
+      <div class="ui form">
+        <div class="fields">
+          <div class="field">
+            <select id="viewCount">
+              <option value="20">20件</option>
+              <option value="50">50件</option>
+              <option value="100">100件</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="first">v1データの移行</h3>
+      <button class="ui blue button" id="buttonMigrate">v2へデータを移行</button>
+      <button class="ui red button" id="buttonDeleteV1">データの削除</button>
+
+      <h3 class="first">データの管理</h3>
+      <button class="ui red button" id="buttonDeleteAll">全てのデータの削除</button>
+    </div>
+
+    <div class="ui bottom attached tab segment" id="import">
+      <div class="ui form">
+        <div class="field">
+          <textarea rows="25" id="textareaImportData"></textarea>
+        </div>
+        <button class="ui blue button" id="buttonImportData">インポート</button>
+      </div>
+    </div>
+
+    <div class="ui bottom attached tab segment" id="export">
+      <div class="ui form">
+        <div class="field">
+          <textarea rows="25" readonly id="textareaExportData"></textarea>
+        </div>
+        <button class="ui green button" id="buttonExportData">エクスポート</button>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="../scripts/options.js"></script>
+</body>
+</html>
